@@ -1,0 +1,499 @@
+$font-main: "Lato", Arial, sans-serif;
+$font-black: 800;
+$font-regular: 700;
+
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+$color-pink: #ff70d9;
+$color-yellow: #ebff00;
+$color-blue-dark: #304571;
+$color-black: #000000;
+$color-white: #ffffff;
+
+html,
+body,
+#root {
+  margin: 0;
+  margin: 0;
+  padding: 0;
+  background: $color-black;
+}
+
+body {
+  font-family: $font-main;
+  font-weight: $font-regular;
+  color: $color-black;
+  background: $color-white;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.container {
+  max-width: 1088px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+}
+
+.button-reset {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  border: 2px solid $color-yellow;
+  padding: 12px 38px;
+  font-size: 22px;
+  border-radius: 24px;
+  text-decoration: none;
+  color: $color-yellow;
+  border-color: $color-yellow;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 5px 38px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.menu-link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: $font-regular;
+  position: relative;
+
+  background: linear-gradient(
+    98.25deg,
+    $color-yellow 0%,
+    $color-pink 50%,
+    $color-white 50%,
+    $color-white 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  transition: background-position 0.2s ease;
+  will-change: background-position;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-position: 0 0;
+  }
+}
+
+.button--burger {
+  display: none;
+
+  @media (max-width: 360px) {
+    display: block;
+  }
+}
+
+.title {
+  color: $color-white;
+  font-size: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 18px;
+  }
+}
+
+// --- Header ---
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $color-black;
+  z-index: 100;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  &__menu {
+    display: block;
+
+    @media (max-width: 360px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 26px;
+  }
+}
+
+.icon-cart {
+  &__path {
+    transition: opacity 0.3s ease;
+
+    &--gradient {
+      opacity: 0;
+    }
+
+    &--base {
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .icon-cart__path {
+      &--gradient {
+        opacity: 1;
+      }
+
+      &--base {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  background: $color-black;
+  top: 0;
+  padding-top: 80px;
+  right: -140%;
+  height: 100%;
+  width: 100%;
+  z-index: 101;
+  transition: right 0.3s ease-in-out;
+
+  &--open {
+    right: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.main {
+  background: $color-blue-dark;
+  overflow: auto;
+}
+
+// --- Herro ---
+.hero {
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.79)),
+    url("/assets/img/hero-bg.jpg") center/cover no-repeat;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 90px 24px;
+    color: $color-white;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      padding-top: 240px;
+    }
+  }
+
+  &__left {
+    flex-shrink: 0;
+  }
+
+  &__right {
+    @media (max-width: 576px) {
+      position: absolute;
+      top: -20%;
+      transform: none;
+    }
+  }
+
+  &__title {
+    font-size: 72px;
+
+    &--pink {
+      color: $color-pink;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 36px;
+    }
+  }
+
+  &__subtitle {
+    margin: 22px 0;
+
+    &--yellow {
+      color: $color-yellow;
+    }
+  }
+
+  &__button {
+    color: $color-black;
+    background: $color-yellow;
+  }
+}
+
+// --- Offers ---
+.offers {
+  overflow: auto;
+  margin-top: 60px;
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.features {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 22px;
+
+    color: $color-white;
+    background: green;
+    padding: 34px;
+    border-radius: 8px;
+    height: 350px;
+    background-size: 101%;
+
+    @media (max-width: 768px) {
+      padding: 26px;
+      justify-content: flex-end;
+    }
+
+    &--full {
+      grid-column: 1 / -1;
+
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
+    }
+
+    &--first {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.79)),
+        url("/assets/img/offers/01.jpg") center/cover no-repeat;
+    }
+
+    &--second {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.79)),
+        url("/assets/img/offers/02.jpg") center/cover no-repeat;
+    }
+
+    &--third {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.79)),
+        url("/assets/img/offers/03.jpg") center/cover no-repeat;
+    }
+
+    &--fourth {
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.79)),
+        url("/assets/img/offers/04.jpg") center/cover no-repeat;
+    }
+  }
+
+  &__title {
+    font-size: 46px;
+
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    &--full {
+      font-size: 74px;
+
+      @media (max-width: 768px) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    &--full {
+      font-size: 26px;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// --- Prefooter ---
+.prefooter {
+  margin: 60px 0;
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-size: 20px;
+    color: rgba($color-white, 0.6);
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.expandable {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    font-size: 20px;
+    color: $color-yellow;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__text--hide {
+    display: none;
+  }
+
+  &__checkbox:checked ~ &__button {
+    .expandable__text--show {
+      display: none;
+    }
+    .expandable__text--hide {
+      display: inline;
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 0;
+
+    p {
+      margin: 10px 0;
+    }
+  }
+
+  &__checkbox:checked ~ &__content {
+    max-height: 500px;
+    padding: 10px 0;
+  }
+}
+
+// --- Footer ---
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color-black;
+  color: $color-yellow;
+  padding-bottom: 20px;
+
+  &__text {
+    font-size: 18px;
+    color: $color-yellow;
+  }
+}
