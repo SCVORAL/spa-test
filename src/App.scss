@@ -22,14 +22,22 @@ $color-blue-dark: #304571;
 $color-black: #000000;
 $color-white: #ffffff;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
-  margin: 0;
+  font-family: $font-main;
+  font-weight: $font-regular;
   margin: 0;
   padding: 0;
   background-color: $color-black;
   color: $color-white;
+  min-width: 320px;
 }
 
 .no-scroll {
@@ -46,22 +54,15 @@ p {
   margin: 0;
 }
 
-body {
-  font-family: $font-main;
-  font-weight: $font-regular;
-  color: $color-black;
-  background: $color-white;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin: 0;
-    padding: 0;
-  }
+li {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -85,6 +86,7 @@ body {
   border-radius: 24px;
   text-decoration: none;
   color: $color-yellow;
+  user-select: none;
   transition: opacity 0.3s ease;
 
   @media (max-width: 768px) {
@@ -508,17 +510,11 @@ body {
   &__content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0 0;
-
-    p {
-      margin: 10px 0;
-    }
+    transition: max-height 0.4s ease;
   }
 
   &__checkbox:checked ~ &__content {
-    max-height: 500px;
-    padding: 10px 0;
+    max-height: 360px;
   }
 }
 
