@@ -21,7 +21,7 @@ function App() {
                 Where the possibilities are{" "}
                 <span className="hero__subtitle--yellow">endless!</span>
               </p>
-              <a href="/" className="hero__button button">
+              <a href="/#" className="hero__button button">
                 Learn more
               </a>
             </div>
@@ -35,44 +35,46 @@ function App() {
           <div className="container">
             <h2 className="offers__title title">Offers</h2>
 
-            <div class="features">
-              <div class="features__item features__item--first features__item--full">
-                <h2 class="features__title features__title--full">
+            <div className="features">
+              <div className="features__item features__item--first features__item--full">
+                <h2 className="features__title features__title--full">
                   Move the borders of reality!
                 </h2>
-                <p class="features__subtitle features__subtitle--full">
+                <p className="features__subtitle features__subtitle--full">
                   Go on a space adventure - it's possible with us!
                 </p>
-                <a href="/" class=" button">
+                <a href="/#" className="button">
                   Read more
                 </a>
               </div>
-              <div class="features__item features__item--second">
-                <h2 class="features__title">
+              <div className="features__item features__item--second">
+                <h2 className="features__title">
                   Space is not just stars and planets
                 </h2>
-                <p class="features__subtitle">Go on a space adventure </p>
-                <a href="/" class=" button">
+                <p className="features__subtitle">Go on a space adventure </p>
+                <a href="/#" className="button">
                   Read more
                 </a>
               </div>
-              <div class="features__item features__item--third">
-                <h2 class="features__title">For those who dream of stars </h2>
-                <p class="features__subtitle ">
+              <div className="features__item features__item--third">
+                <h2 className="features__title">
+                  For those who dream of stars{" "}
+                </h2>
+                <p className="features__subtitle ">
                   Our offer: make your dream come true
                 </p>
-                <a href="/" class=" button">
+                <a href="/#" className="button">
                   Read more
                 </a>
               </div>
-              <div class="features__item features__item--fourth features__item--full">
-                <h2 class="features__title features__title--full">
+              <div className="features__item features__item--fourth features__item--full">
+                <h2 className="features__title features__title--full">
                   Fulfill your fantastic dreams
                 </h2>
-                <p class="features__subtitle features__subtitle--full">
+                <p className="features__subtitle features__subtitle--full">
                   Space has never been so close
                 </p>
-                <a href="/" class=" button">
+                <a href="/#" className="button">
                   Read more
                 </a>
               </div>
@@ -98,37 +100,35 @@ function App() {
               adventure in space. We offer various options for space excursions.
             </p>
 
-            <div class="expandable">
+            <div className="expandable">
               <input
                 type="checkbox"
                 id="expand-toggle"
-                class="expandable__checkbox"
+                className="expandable__checkbox"
               />
 
-              <p class="prefooter__text expandable__content">
-                Вот дополнительный текст, который появляется при клике на
-                кнопку. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+              <p className="prefooter__text expandable__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
 
-              <label for="expand-toggle" class="expandable__button">
-                <span class="expandable__text--show">Read more</span>
-                <span class="expandable__text--hide">Read less</span>
+              <label htmlFor="expand-toggle" className="expandable__button">
+                <span className="expandable__text--show">Read more</span>
+                <span className="expandable__text--hide">Read less</span>
               </label>
             </div>
           </div>
         </section>
       </main>
 
-      <footer class="footer">
+      <footer className="footer">
         <img src={imgRocket} alt="Footer Logo" width="70" />
-        <p class="footer__text">Exciting space adventure!</p>
+        <p className="footer__text">Exciting space adventure!</p>
       </footer>
     </>
   );

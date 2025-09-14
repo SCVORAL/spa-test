@@ -29,6 +29,21 @@ body,
   margin: 0;
   padding: 0;
   background: $color-black;
+  color: $color-white;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 body {
@@ -62,16 +77,6 @@ body {
   cursor: pointer;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
 .button {
   display: inline-block;
   border: 2px solid $color-yellow;
@@ -80,11 +85,10 @@ p {
   border-radius: 24px;
   text-decoration: none;
   color: $color-yellow;
-  border-color: $color-yellow;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 
   @media (max-width: 768px) {
-    padding: 5px 38px;
+    padding: 6px 38px;
     font-size: 16px;
   }
 
@@ -93,7 +97,7 @@ p {
   }
 }
 
-.menu-link {
+.nav-link {
   text-decoration: none;
   font-size: 18px;
   font-weight: $font-regular;
@@ -124,17 +128,9 @@ p {
   }
 }
 
-.button--burger {
-  display: none;
-
-  @media (max-width: 360px) {
-    display: block;
-  }
-}
-
 .title {
-  color: $color-white;
   font-size: 32px;
+  font-weight: $font-black;
 
   @media (max-width: 768px) {
     font-size: 24px;
@@ -164,7 +160,7 @@ p {
   &__menu {
     display: block;
 
-    @media (max-width: 360px) {
+    @media (max-width: 576px) {
       display: none;
     }
   }
@@ -173,9 +169,17 @@ p {
     display: flex;
     gap: 26px;
   }
+
+  &__burger {
+    display: none;
+
+    @media (max-width: 576px) {
+      display: block;
+    }
+  }
 }
 
-.icon-cart {
+.cart-icon {
   &__path {
     transition: opacity 0.3s ease;
 
@@ -191,7 +195,7 @@ p {
   &:hover,
   &:focus,
   &:active {
-    .icon-cart__path {
+    .cart-icon__path {
       &--gradient {
         opacity: 1;
       }
@@ -203,7 +207,7 @@ p {
   }
 }
 
-/* Mobile Menu */
+// --- Mobile Menu ---
 .mobile-menu {
   position: fixed;
   background: $color-black;
@@ -229,10 +233,11 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
   }
 }
 
+// --- Main ---
 .main {
   background: $color-blue-dark;
   overflow: auto;
@@ -250,17 +255,23 @@ p {
     justify-content: space-between;
     align-items: center;
     gap: 60px;
-    padding: 90px 24px;
-    color: $color-white;
+    padding-top: 90px;
+    padding-bottom: 90px;
 
     @media (max-width: 576px) {
       flex-direction: column;
       padding-top: 240px;
+      padding-bottom: 40px;
+      justify-content: center;
     }
   }
 
   &__left {
     flex-shrink: 0;
+
+    @media (max-width: 576px) {
+      text-align: center;
+    }
   }
 
   &__right {
@@ -273,6 +284,7 @@ p {
 
   &__title {
     font-size: 72px;
+    font-weight: $font-black;
 
     &--pink {
       color: $color-pink;
@@ -282,13 +294,23 @@ p {
       font-size: 48px;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 576px) {
       font-size: 36px;
     }
   }
 
   &__subtitle {
+    font-size: 32px;
     margin: 22px 0;
+    font-weight: $font-black;
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 16px;
+    }
 
     &--yellow {
       color: $color-yellow;
@@ -328,19 +350,25 @@ p {
     grid-template-columns: 1fr;
   }
 
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 22px;
-
-    color: $color-white;
     background: green;
     padding: 34px;
-    border-radius: 8px;
     height: 350px;
-    background-size: 101%;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(0.994);
+    }
 
     @media (max-width: 768px) {
       padding: 26px;
@@ -378,6 +406,7 @@ p {
 
   &__title {
     font-size: 46px;
+    font-weight: $font-black;
 
     @media (max-width: 768px) {
       font-size: 40px;
@@ -394,6 +423,7 @@ p {
 
   &__subtitle {
     font-size: 24px;
+    font-weight: $font-black;
 
     @media (max-width: 768px) {
       font-size: 16px;
@@ -441,7 +471,9 @@ p {
   }
 
   &__button {
+    margin-top: 16px;
     font-size: 20px;
+    font-weight: $font-black;
     color: $color-yellow;
     display: inline-block;
     cursor: pointer;
@@ -449,6 +481,14 @@ p {
 
     &:hover {
       opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 14px;
     }
   }
 
@@ -493,7 +533,7 @@ p {
   padding-bottom: 20px;
 
   &__text {
+    font-weight: $font-black;
     font-size: 18px;
-    color: $color-yellow;
   }
 }
