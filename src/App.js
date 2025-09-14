@@ -21,7 +21,7 @@ function App() {
                 Where the possibilities are{" "}
                 <span className="hero__subtitle--yellow">endless!</span>
               </p>
-              <a href="/#" className="hero__button button">
+              <a href="/" className="hero__button button">
                 Learn more
               </a>
             </div>
@@ -43,7 +43,7 @@ function App() {
                 <p className="features__subtitle features__subtitle--full">
                   Go on a space adventure - it's possible with us!
                 </p>
-                <a href="/#" className="button">
+                <a href="/" className="button">
                   Read more
                 </a>
               </div>
@@ -52,7 +52,7 @@ function App() {
                   Space is not just stars and planets
                 </h2>
                 <p className="features__subtitle">Go on a space adventure </p>
-                <a href="/#" className="button">
+                <a href="/" className="button">
                   Read more
                 </a>
               </div>
@@ -63,7 +63,7 @@ function App() {
                 <p className="features__subtitle ">
                   Our offer: make your dream come true
                 </p>
-                <a href="/#" className="button">
+                <a href="/" className="button">
                   Read more
                 </a>
               </div>
@@ -74,7 +74,7 @@ function App() {
                 <p className="features__subtitle features__subtitle--full">
                   Space has never been so close
                 </p>
-                <a href="/#" className="button">
+                <a href="/" className="button">
                   Read more
                 </a>
               </div>

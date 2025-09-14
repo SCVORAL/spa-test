@@ -51,24 +51,24 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__container container">
-        <a href="/#">
+        <a href="/">
           <img src={logo} alt="Logo" width="104" height="36" />
         </a>
 
         <nav className="header__menu">
           <ul className="header__list">
             <li>
-              <a href="/#" className="nav-link">
+              <a href="/" className="nav-link">
                 Home
               </a>
             </li>
             <li>
-              <a href="/#" className="nav-link">
+              <a href="/" className="nav-link">
                 Products
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/">
                 <IconCart gradientID="cartGradient1" />
               </a>
             </li>
@@ -90,17 +90,17 @@ const Header = () => {
 
         <ul className="mobile-menu__list">
           <li>
-            <a href="/#" className="nav-link">
+            <a href="/" className="nav-link">
               Home
             </a>
           </li>
           <li>
-            <a href="/#" className="nav-link">
+            <a href="/" className="nav-link">
               Products
             </a>
           </li>
           <li>
-            <a href="/#">
+            <a href="/">
               <IconCart gradientID="cartGradient2" />
             </a>
           </li>
